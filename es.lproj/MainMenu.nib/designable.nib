@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="101003" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject">
+            <connections>
+                <outlet property="delegate" destination="209" id="339"/>
+            </connections>
+        </customObject>
+        <menu title="Menu" autoenablesItems="NO" id="206" userLabel="Icon Menu">
+            <items>
+                <menuItem title="Caffeine está activado" hidden="YES" enabled="NO" id="349">
+                    <connections>
+                        <action selector="showAbout:" target="209" id="350"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="353"/>
+                <menuItem title="Información de Caffeine" id="208">
+                    <connections>
+                        <action selector="showAbout:" target="209" id="219"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Opciones..." id="243">
+                    <connections>
+                        <action selector="showPreferences:" target="209" id="244"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="256"/>
+                <menuItem title="Activar durante" id="255">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Activar durante" id="257">
+                        <items>
+                            <menuItem title="Indefinidamente" id="290">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="291"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Corto (pruebas)" tag="-1" alternate="YES" id="313">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="314"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="1 minuto" tag="1" hidden="YES" id="266">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="267"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="5 minutos" tag="5" id="258">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="268"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="10 minutos" tag="10" id="259">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="269"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="15 minutos" tag="15" id="260">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="270"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="30 minutos" tag="30" id="262">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="271"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="1 hora" tag="60" id="263">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="272"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="2 horas" tag="120" id="265">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="273"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="5 horas" tag="300" id="292">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="activateWithTimeout:" target="209" id="293"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="212">
+                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                </menuItem>
+                <menuItem title="Salir" id="207">
+                    <connections>
+                        <action selector="terminate:" target="-2" id="211"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="209" id="356"/>
+            </connections>
+            <point key="canvasLocation" x="303" y="-129"/>
+        </menu>
+        <customObject id="209" userLabel="AppDelegate" customClass="AppDelegate">
+            <connections>
+                <outlet property="accessibilityPermissionWindow" destination="zTg-e4-6Q5" id="ALv-jU-i44"/>
+                <outlet property="donateWindow" destination="jBd-pw-Pfa" id="VWg-HA-1D3"/>
+                <outlet property="feedbackWindow" destination="NHG-G7-fCZ" id="RDe-ND-oUt"/>
+                <outlet property="firstTimeWindow" destination="220" id="228"/>
+                <outlet property="helpCenterWindow" destination="yqQ-IL-MDB" id="5cL-6j-k9I"/>
+                <outlet property="infoMenuItem" destination="349" id="354"/>
+                <outlet property="infoSeparatorItem" destination="353" id="355"/>
+                <outlet property="menu" destination="206" id="338"/>
+                <outlet property="problemReportInfoPopover" destination="T9U-rq-DHk" id="AO1-cN-XwU"/>
+                <outlet property="problemReportInfoPopoverButton" destination="5vx-CP-Wuv" id="hap-51-Lcu"/>
+                <outlet property="problemReportSwitch" destination="1dQ-Ix-8m5" id="EF1-SB-2Vc"/>
+            </connections>
+        </customObject>
+        <window title="Bienvenida de Caffeine" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="220" userLabel="First Time/Preferences">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="441" y="384" width="533" height="302"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="221">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="302"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="223">
+                        <rect key="frame" x="134" y="226" width="382" height="64"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="318">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Caffeine se está ejecutando ahora. Puedes encontrar su icono en la parte derecha de tu barra de menús. Haz clic en él para desactivar el reposo automático, y haz clic de nuevo para ir atrás.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="225">
+                        <rect key="frame" x="432" y="12" width="79" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Cerrar" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="319">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="orderOut:" target="220" id="227"/>
+                        </connections>
+                    </button>
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="229">
+                        <rect key="frame" x="20" y="186" width="96" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="320"/>
+                    </imageView>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="235">
+                        <rect key="frame" x="135" y="96" width="277" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Muestra este mensaje al iniciarse Caffeine" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="321">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="241" name="value" keyPath="values.SuppressLaunchMessage" id="246">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="237">
+                        <rect key="frame" x="137" y="181" width="376" height="37"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" title="Haz clic derecho (o ⌘-clic) en el icono de la barra de menús para mostrar el menú de Caffeine." id="322">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="239">
+                        <rect key="frame" x="135" y="142" width="318" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Iniciar Caffeine automáticamente al iniciar sesión" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="323">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="209" name="value" keyPath="startsAtLogin" id="343"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="311">
+                        <rect key="frame" x="137" y="65" width="137" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Duración por defecto:" id="325">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="326">
+                        <rect key="frame" x="135" y="119" width="358" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Activar Caffeine al iniciarse" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="327">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="241" name="value" keyPath="values.ActivateOnLaunch" id="342"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="344">
+                        <rect key="frame" x="14" y="12" width="96" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Salir" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="345">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="terminate:" target="-3" id="348"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-O2-JwF">
+                        <rect key="frame" x="105" y="12" width="155" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Ayuda/sugerencias" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="za2-MY-t6l">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="launchHelpCenter:" target="209" id="4Qf-D5-5YP"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="294">
+                        <rect key="frame" x="278" y="60" width="136" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Indefinidamente" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="300" id="324">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="296">
+                                <items>
+                                    <menuItem title="Indefinidamente" state="on" id="300">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Corto (pruebas)" tag="-1" hidden="YES" id="315">
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </menuItem>
+                                    <menuItem title="1 minuto" tag="1" hidden="YES" id="301">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="5 minutos" tag="5" id="302">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="10 minutos" tag="10" id="303">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="15 minutos" tag="15" id="304">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="30 minutos" tag="30" id="305">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="1 hora" tag="60" id="306">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="2 horas" tag="120" id="307">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="5 horas" tag="300" id="308">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="241" name="selectedTag" keyPath="values.DefaultDuration" id="310"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="117.5" y="168"/>
+        </window>
+        <window title="Ayuda/sugerencias" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="yqQ-IL-MDB" userLabel="Help &amp; Feedback">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="441" y="384" width="607" height="288"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="RU7-vX-x8s">
+                <rect key="frame" x="0.0" y="0.0" width="607" height="288"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="spS-Ut-f9R">
+                        <rect key="frame" x="18" y="227" width="405" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="icA-jH-3pG">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">¿Tienes algún problema? ¡Estamos aquí para ayudar! Visita nuestro centro de soporte para ver soluciones a problemas comunes, consejos, y más.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-lr-YMJ">
+                        <rect key="frame" x="18" y="175" width="405" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="¿Quieres hacernos saber qué piensas sobre Caffeine? Envíanos tus comentarios haciendo clic en el botón de la derecha." id="XL5-mr-9pP">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-g6-cjs">
+                        <rect key="frame" x="430" y="174" width="156" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Enviar comentarios" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="irh-9L-OiY">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="launchFeedback:" target="209" id="8NQ-rI-3E9"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-eW-ub5">
+                        <rect key="frame" x="411" y="233" width="196" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Abrir el centro de soporte" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MaE-GL-bYD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchSupport:" target="209" id="4jC-IM-MVW"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dtw-vZ-k96">
+                        <rect key="frame" x="470" y="113" width="77" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Donar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q0p-HB-1dP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="launchDonate:" target="209" id="kC7-Bo-54V"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="B9j-3f-alA">
+                        <rect key="frame" x="12" y="94" width="583" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="TGO-wh-Tv9">
+                        <rect key="frame" x="12" y="217" width="583" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7f7-hP-dC5">
+                        <rect key="frame" x="20" y="160" width="583" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6c-rI-puF">
+                        <rect key="frame" x="18" y="69" width="557" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Informa de problemas y envía información de soporte del sistema" id="0FN-Ls-hAk">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ueg-Di-AvT">
+                        <rect key="frame" x="12" y="56" width="583" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dQ-Ix-8m5" customClass="ISToggleSwitch">
+                        <rect key="frame" x="535" y="65" width="55" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="ciQ-QN-wzx" customClass="ISToggleSwitchCell">
+                            <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="SÍ"/>
+                                <segment width="16" selected="YES" tag="1"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <binding destination="241" name="selectedIndex" keyPath="values.SendProblemReports" id="bg3-x6-pan">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="1"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="1"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="1"/>
+                                    <integer key="NSNullPlaceholder" value="1"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </segmentedControl>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-CP-Wuv">
+                        <rect key="frame" x="421" y="63" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cP0-a0-inZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showProblemReportInfoPopoverButton:" target="209" id="AhV-pt-jpE"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-tg-QT1">
+                        <rect key="frame" x="484" y="13" width="110" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="De acuerdo" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="0mJ-qa-Kjg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="orderOut:" target="yqQ-IL-MDB" id="2gl-9H-OJQ"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98V-xq-Yv8">
+                        <rect key="frame" x="18" y="107" width="405" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="h3i-Js-6dc">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Caffeine es y siempre será gratuito, pero siempre se agradecen las donaciones y las propinas para ayudar a sostener el desarrollo futuro.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="765.5" y="-52"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="241" userLabel="Shared User Defaults Controller"/>
+        <window title="Donar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="jBd-pw-Pfa">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="283" y="305" width="450" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="qXt-dQ-tm7">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="800"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <point key="canvasLocation" x="166" y="815"/>
+        </window>
+        <window title="Enviar comentarios" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NHG-G7-fCZ">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="283" y="305" width="450" height="600"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="1cx-DT-6BF">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="600"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <point key="canvasLocation" x="698" y="715"/>
+        </window>
+        <window title="Permiso del sistema necesario" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="zTg-e4-6Q5" userLabel="Accessibility Prompt">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="441" y="384" width="533" height="554"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="wsg-xj-UbS">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="554"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vha-15-D9X">
+                        <rect key="frame" x="18" y="500" width="497" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Caffeine necesita que le des permiso para modificar la configuración del sistema, de manera que pueda funcionar correctamente." id="M9Q-mZ-Gft">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e5O-GU-NNM">
+                        <rect key="frame" x="18" y="436" width="497" height="56"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="IfM-7F-E5E">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">macOS requiere que se dé permiso explícito a cualquier aplicación que quiera controlar el comportamiento de tu ordenador, por razones de seguridad y privacidad.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REW-qg-TcP">
+                        <rect key="frame" x="75" y="125" width="382" height="306"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageFrameStyle="groove" image="AccessibilityPermission" id="sad-xI-xXw"/>
+                    </imageView>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymr-3B-5oq">
+                        <rect key="frame" x="18" y="62" width="497" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Por favor, accede a las Preferencias del Sistema y activa el permiso Accesibilidad para Caffeine como se muestra aquí arriba." id="CpV-FW-d6d">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVU-fT-edz">
+                        <rect key="frame" x="140" y="13" width="254" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Abre las Preferencias del Sistema..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wgY-9I-X0e">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchSystemPreferences:" target="209" id="YgA-o6-tDd"/>
+                        </connections>
+                    </button>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTN-lv-z7J">
+                        <rect key="frame" x="490" y="17" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4EQ-xW-vay">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchSupportAccessibility:" target="209" id="ngb-hG-tit"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-529.5" y="422"/>
+        </window>
+        <viewController id="P8h-ow-mJo" userLabel="Popover View Controller">
+            <connections>
+                <outlet property="view" destination="ndJ-lE-Rj8" id="6xn-oY-Ez2"/>
+            </connections>
+        </viewController>
+        <popover behavior="t" id="T9U-rq-DHk">
+            <connections>
+                <outlet property="contentViewController" destination="P8h-ow-mJo" id="3g8-D7-avB"/>
+                <outlet property="delegate" destination="P8h-ow-mJo" id="AZn-6Y-ZqN"/>
+            </connections>
+        </popover>
+        <customView id="ndJ-lE-Rj8" userLabel="Problem Report Information">
+            <rect key="frame" x="0.0" y="0.0" width="607" height="204"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-JF-CmJ">
+                    <rect key="frame" x="18" y="149" width="571" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="CXU-HV-09b">
+                        <font key="font" metaFont="smallSystem"/>
+                        <string key="title">Respetamos tu privacidad. Para poder darte soporte de Caffeine y poder arreglar los problemas a tiempo, podríamos enviar la siguiente información:</string>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KK8-R5-pQK">
+                    <rect key="frame" x="18" y="45" width="571" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Dbu-iV-CXb">
+                        <font key="font" metaFont="smallSystem"/>
+                        <string key="title">Estos elementos se envían para ayudar a identificar problemas con ciertas combinaciones de hardware, errores en versiones nuevas de macOS, etc. No enviamos ninguna información personal, y se toman precauciones adicionales para anonimizar más los datos que recibimos.</string>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-pt-Bky">
+                    <rect key="frame" x="18" y="20" width="571" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Aun así, si no te sientes cómodo/a con esta funcionalidad por cualquier razón, puedes desactivarlo aquí." id="wEN-1j-3PM">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ynx-Jv-kar">
+                    <rect key="frame" x="18" y="95" width="571" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="jg3-jh-YfD">
+                        <font key="font" metaFont="system" size="10"/>
+                        <string key="title">        •  Logs de crashes, detalles de error e informes de problemas
+        •  Información sobre la versión del sistema operativo (por ejemplo, macOS Mojave 10.14.6)
+        •  Modelo y marca del hardware (por ejemplo, tipo del Mac y tamaño de la pantalla)
+        •  Información general sobre las condiciones  en las que Caffeine se está ejecutando</string>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="1353.5" y="492"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="AccessibilityPermission" width="376" height="300"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+    </resources>
+</document>

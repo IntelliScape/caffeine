@@ -44,6 +44,10 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Caffeine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caffeine_Prefix.pch; sourceTree = "<group>"; };
 		37A0D7E78D59EADA9111CA6E /* Pods-Caffeine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caffeine.release.xcconfig"; path = "Target Support Files/Pods-Caffeine/Pods-Caffeine.release.xcconfig"; sourceTree = "<group>"; };
+		6E36E934252781F9003EF33F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6E36E935252781F9003EF33F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E36E936252781F9003EF33F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E36E937252781F9003EF33F /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Caffeine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caffeine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91BADA4F8D5A0AFE68767B5B /* Pods-Caffeine.app store release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caffeine.app store release.xcconfig"; path = "Target Support Files/Pods-Caffeine/Pods-Caffeine.app store release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 				French,
 				German,
 				sv,
+				es,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Caffeine */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
@@ -335,6 +340,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
+				6E36E936252781F9003EF33F /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				29B97319FDCFA39411CA2CEA /* English */,
+				6E36E937252781F9003EF33F /* es */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -351,6 +358,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E2DE1C460A1E8BF300997829 /* English */,
+				6E36E934252781F9003EF33F /* es */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E2DE1CB50A1F38AB00997829 /* English */,
+				6E36E935252781F9003EF33F /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
