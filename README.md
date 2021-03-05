@@ -26,7 +26,7 @@ Caffeine is intended to be simple, yet powerful. Options you can configure inclu
 
 ##### Is this the same Caffeine that I've used before?
 
-Yes! Tomas Franzén of Lighthead Software originally developed Caffeine in 2006, and it has been a well known and loved utility for Mac users for many years. Its simplicity has allowed it to continue working perfectly long after active development had ceased.
+Yes! Tomas Franzén of Lighthead Software originally developed Caffeine in 2006, and it has been a well known and loved utility for Mac users for many years. Its simplicity has allowed it to continue working perfectly long after active development had ceased. However, macOS Mojave's new privacy controls caused Caffeine to not function correctly.
 
 In 2018, we reached out to Tomas to inquire if we could continue development of Caffeine, as we believe it fits nicely with our vision of software that is simple, flexible and powerful.
 
