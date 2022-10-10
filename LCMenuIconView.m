@@ -22,8 +22,8 @@
     inactiveImage = [[NSImage imageNamed:@"inactive"] retain];
     
     // Invert icons if in dark mode
-    NSString *mode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
-    if([mode isEqualToString: @"Dark"]) {
+    NSString *mode = (NSString*)(self.effectiveAppearance.name);
+    if([[mode lowercaseString] containsString: @"dark"]) {
         activeImage = [[NSImage imageNamed:@"highlightactive"] retain];
         inactiveImage = [[NSImage imageNamed:@"highlighted"] retain];
     }
@@ -32,7 +32,6 @@
     highlightActiveImage = [[NSImage imageNamed:@"highlightactive"] retain];
     
 	NSImage *i = isActive ? activeImage : inactiveImage;
-	if(menuIsShown) i = isActive ? highlightActiveImage : highlightImage;
 	NSRect f = [self bounds];
 	NSPoint p = NSMakePoint(f.size.width/2 - [i size].width/2, f.size.height/2 - [i size].height/2 + 1);
 	
