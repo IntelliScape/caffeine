@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="101003" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -124,21 +124,19 @@
                 <outlet property="infoSeparatorItem" destination="353" id="355"/>
                 <outlet property="menu" destination="206" id="338"/>
                 <outlet property="problemReportInfoPopover" destination="T9U-rq-DHk" id="AO1-cN-XwU"/>
-                <outlet property="problemReportInfoPopoverButton" destination="5vx-CP-Wuv" id="hap-51-Lcu"/>
-                <outlet property="problemReportSwitch" destination="1dQ-Ix-8m5" id="EF1-SB-2Vc"/>
             </connections>
         </customObject>
         <window title="Welcome to Caffeine" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="220" userLabel="First Time/Preferences">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="441" y="384" width="533" height="302"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="221">
                 <rect key="frame" x="0.0" y="0.0" width="533" height="302"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="223">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="223">
                         <rect key="frame" x="134" y="226" width="382" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="318">
@@ -148,7 +146,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="225">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="225">
                         <rect key="frame" x="423" y="12" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="319">
@@ -162,12 +160,12 @@ DQ
                             <action selector="orderOut:" target="220" id="227"/>
                         </connections>
                     </button>
-                    <imageView id="229">
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="229">
                         <rect key="frame" x="20" y="186" width="96" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="320"/>
                     </imageView>
-                    <button imageHugsTitle="YES" id="235">
+                    <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="235">
                         <rect key="frame" x="135" y="96" width="301" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="check" title="Show this message when starting Caffeine" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="321">
@@ -182,7 +180,7 @@ DQ
                             </binding>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="237">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="237">
                         <rect key="frame" x="137" y="181" width="376" height="37"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" title="Right-click (or ⌘-click) the menu bar icon to show the Caffeine menu." id="322">
@@ -191,7 +189,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button imageHugsTitle="YES" id="239">
+                    <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="239">
                         <rect key="frame" x="135" y="142" width="266" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="check" title="Automatically start Caffeine at login" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="323">
@@ -202,12 +200,12 @@ DQ
                             <binding destination="209" name="value" keyPath="startsAtLogin" id="343"/>
                         </connections>
                     </button>
-                    <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="294">
+                    <popUpButton imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="294">
                         <rect key="frame" x="251" y="59" width="119" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Indefinitely" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="300" id="324">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
+                            <font key="font" metaFont="message"/>
                             <menu key="menu" title="OtherViews" id="296">
                                 <items>
                                     <menuItem title="Indefinitely" state="on" id="300">
@@ -247,7 +245,7 @@ DQ
                             <binding destination="241" name="selectedTag" keyPath="values.DefaultDuration" id="310"/>
                         </connections>
                     </popUpButton>
-                    <textField verticalHuggingPriority="750" id="311">
+                    <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="311">
                         <rect key="frame" x="137" y="65" width="112" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default duration:" id="325">
@@ -256,7 +254,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button imageHugsTitle="YES" id="326">
+                    <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="326">
                         <rect key="frame" x="135" y="119" width="358" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="check" title="Activate Caffeine at launch" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="327">
@@ -267,7 +265,7 @@ DQ
                             <binding destination="241" name="value" keyPath="values.ActivateOnLaunch" id="342"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="344">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="344">
                         <rect key="frame" x="14" y="12" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="345">
@@ -278,7 +276,7 @@ DQ
                             <action selector="terminate:" target="-3" id="348"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="hiX-O2-JwF">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-O2-JwF">
                         <rect key="frame" x="110" y="12" width="144" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Help &amp; Feedback" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="za2-MY-t6l">
@@ -296,15 +294,15 @@ DQ
         <window title="Help &amp; Feedback" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="yqQ-IL-MDB" userLabel="Help &amp; Feedback">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="441" y="384" width="607" height="288"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="contentRect" x="441" y="384" width="607" height="252"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="RU7-vX-x8s">
-                <rect key="frame" x="0.0" y="0.0" width="607" height="288"/>
+                <rect key="frame" x="0.0" y="0.0" width="607" height="252"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="spS-Ut-f9R">
-                        <rect key="frame" x="18" y="234" width="405" height="34"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="spS-Ut-f9R">
+                        <rect key="frame" x="18" y="198" width="405" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Having trouble? We're here to help! Visit our support center for solutions to common problems, tips, and more." id="icA-jH-3pG">
                             <font key="font" metaFont="system"/>
@@ -312,8 +310,8 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="qOP-lr-YMJ">
-                        <rect key="frame" x="18" y="175" width="405" height="34"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOP-lr-YMJ">
+                        <rect key="frame" x="18" y="139" width="405" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Want to let us know what you think about Caffeine? Send us your feedback by clicking the button to the right." id="XL5-mr-9pP">
                             <font key="font" metaFont="system"/>
@@ -321,8 +319,8 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="98V-xq-Yv8">
-                        <rect key="frame" x="18" y="114" width="405" height="34"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98V-xq-Yv8">
+                        <rect key="frame" x="18" y="78" width="405" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="h3i-Js-6dc">
                             <font key="font" metaFont="system"/>
@@ -331,8 +329,8 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="c6d-g6-cjs">
-                        <rect key="frame" x="441" y="174" width="134" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-g6-cjs">
+                        <rect key="frame" x="441" y="139" width="134" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Send Feedback" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="irh-9L-OiY">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -342,8 +340,8 @@ DQ
                             </connections>
                         </buttonCell>
                     </button>
-                    <button verticalHuggingPriority="750" id="dyP-eW-ub5">
-                        <rect key="frame" x="423" y="233" width="170" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-eW-ub5">
+                        <rect key="frame" x="423" y="197" width="170" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Open Support Center" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MaE-GL-bYD">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -353,76 +351,20 @@ DQ
                             <action selector="launchSupport:" target="209" id="4jC-IM-MVW"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="Dtw-vZ-k96">
-                        <rect key="frame" x="466" y="113" width="84" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Donate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q0p-HB-1dP">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <connections>
-                                <action selector="launchDonate:" target="209" id="kC7-Bo-54V"/>
-                            </connections>
-                        </buttonCell>
-                    </button>
-                    <box verticalHuggingPriority="750" boxType="separator" id="B9j-3f-alA">
-                        <rect key="frame" x="12" y="94" width="583" height="5"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="B9j-3f-alA">
+                        <rect key="frame" x="12" y="58" width="583" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
-                    <box verticalHuggingPriority="750" boxType="separator" id="TGO-wh-Tv9">
-                        <rect key="frame" x="12" y="217" width="583" height="5"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="TGO-wh-Tv9">
+                        <rect key="frame" x="12" y="181" width="583" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
-                    <box verticalHuggingPriority="750" boxType="separator" id="7f7-hP-dC5">
-                        <rect key="frame" x="20" y="160" width="583" height="5"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7f7-hP-dC5">
+                        <rect key="frame" x="20" y="124" width="583" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="X6c-rI-puF">
-                        <rect key="frame" x="18" y="69" width="341" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Report Problems &amp; Provide System Support Information" id="0FN-Ls-hAk">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <box verticalHuggingPriority="750" boxType="separator" id="Ueg-Di-AvT">
-                        <rect key="frame" x="12" y="56" width="583" height="5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    </box>
-                    <segmentedControl verticalHuggingPriority="750" id="1dQ-Ix-8m5" customClass="ISToggleSwitch">
-                        <rect key="frame" x="531" y="65" width="62" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="ciQ-QN-wzx" customClass="ISToggleSwitchCell">
-                            <font key="font" metaFont="system"/>
-                            <segments>
-                                <segment label=" ON" width="40"/>
-                                <segment width="16" selected="YES" tag="1"/>
-                            </segments>
-                        </segmentedCell>
-                        <connections>
-                            <binding destination="241" name="selectedIndex" keyPath="values.SendProblemReports" id="bg3-x6-pan">
-                                <dictionary key="options">
-                                    <integer key="NSMultipleValuesPlaceholder" value="1"/>
-                                    <integer key="NSNoSelectionPlaceholder" value="1"/>
-                                    <integer key="NSNotApplicablePlaceholder" value="1"/>
-                                    <integer key="NSNullPlaceholder" value="1"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </segmentedControl>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="5vx-CP-Wuv">
-                        <rect key="frame" x="363" y="64" width="25" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cP0-a0-inZ">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="showProblemReportInfoPopoverButton:" target="209" id="AhV-pt-jpE"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="XT1-tg-QT1">
-                        <rect key="frame" x="505" y="13" width="96" height="32"/>
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-tg-QT1">
+                        <rect key="frame" x="498" y="13" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="0mJ-qa-Kjg">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -435,15 +377,26 @@ DQ
                             <action selector="orderOut:" target="yqQ-IL-MDB" id="2gl-9H-OJQ"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dtw-vZ-k96">
+                        <rect key="frame" x="466" y="78" width="84" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Donate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q0p-HB-1dP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="launchDonate:" target="209" id="kC7-Bo-54V"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="765.5" y="-52"/>
+            <point key="canvasLocation" x="765.5" y="-70"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="241" userLabel="Shared User Defaults Controller"/>
         <window title="Donate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="jBd-pw-Pfa">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="283" y="305" width="450" height="800"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <view key="contentView" id="qXt-dQ-tm7">
                 <rect key="frame" x="0.0" y="0.0" width="450" height="800"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -453,7 +406,7 @@ DQ
         <window title="Provide Feedback" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NHG-G7-fCZ">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="283" y="305" width="450" height="600"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <view key="contentView" id="1cx-DT-6BF">
                 <rect key="frame" x="0.0" y="0.0" width="450" height="600"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -464,13 +417,13 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="441" y="384" width="533" height="554"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="wsg-xj-UbS">
                 <rect key="frame" x="0.0" y="0.0" width="533" height="554"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="Vha-15-D9X">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vha-15-D9X">
                         <rect key="frame" x="18" y="500" width="497" height="34"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Caffeine needs you to give it permission to modify system settings so that it can work correctly." id="M9Q-mZ-Gft">
@@ -479,7 +432,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="e5O-GU-NNM">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e5O-GU-NNM">
                         <rect key="frame" x="18" y="436" width="497" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="IfM-7F-E5E">
@@ -489,12 +442,12 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="REW-qg-TcP">
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REW-qg-TcP">
                         <rect key="frame" x="75" y="125" width="382" height="306"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageFrameStyle="groove" image="AccessibilityPermission" id="sad-xI-xXw"/>
                     </imageView>
-                    <textField verticalHuggingPriority="750" id="Ymr-3B-5oq">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymr-3B-5oq">
                         <rect key="frame" x="18" y="62" width="497" height="34"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please visit System Preferences and enable the Accessibility permission for Caffeine as shown above." id="CpV-FW-d6d">
@@ -503,7 +456,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="bVU-fT-edz">
+                    <button imageHugsTitle="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVU-fT-edz">
                         <rect key="frame" x="162" y="13" width="209" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Open System Preferences..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wgY-9I-X0e">
@@ -517,7 +470,7 @@ DQ
                             <action selector="launchSystemPreferences:" target="209" id="YgA-o6-tDd"/>
                         </connections>
                     </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="ZTN-lv-z7J">
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTN-lv-z7J">
                         <rect key="frame" x="490" y="17" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4EQ-xW-vay">
@@ -547,36 +500,36 @@ DQ
             <rect key="frame" x="0.0" y="0.0" width="607" height="204"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" id="DhO-JF-CmJ">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-JF-CmJ">
                     <rect key="frame" x="18" y="149" width="571" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="CXU-HV-09b">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <string key="title">We respect your privacy. In order to provide support for Caffeine and to be able to address problems in a timely manner, we may gather the following information:</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="KK8-R5-pQK">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KK8-R5-pQK">
                     <rect key="frame" x="18" y="45" width="571" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Dbu-iV-CXb">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <string key="title">These items are collected to assist in identifying problems with certain combinations of hardware, bugs in new macOS versions, and so on. We do not collect any personal information, and extra precautions are taken to further anonomize this data as it is received. </string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="GXI-pt-Bky">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-pt-Bky">
                     <rect key="frame" x="18" y="20" width="571" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="However, if you are not comfortable with this functionality for any reason, you may disable it here." id="wEN-1j-3PM">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="Ynx-Jv-kar">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ynx-Jv-kar">
                     <rect key="frame" x="18" y="95" width="571" height="52"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="jg3-jh-YfD">
@@ -595,6 +548,6 @@ DQ
     </objects>
     <resources>
         <image name="AccessibilityPermission" width="376" height="300"/>
-        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
     </resources>
 </document>

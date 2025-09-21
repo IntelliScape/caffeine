@@ -10,25 +10,25 @@
 
 
 @interface LCMenuIconView : NSControl {
-	BOOL isActive;
-	BOOL menuIsShown;
-	
-	IBOutlet NSMenu *menu;
-	NSStatusItem *statusItem;
-	
-	NSImage *activeImage;
-	NSImage *inactiveImage;
-	
-	NSImage *highlightImage;
-	NSImage *highlightActiveImage;
-	
-	NSTimeInterval lastMouseUp;
-	
-	SEL action;
-	id target;
+    BOOL isActive;
+    BOOL menuIsShown;
+    
+    IBOutlet NSMenu *menu;
+    NSStatusItem *statusItem;
+    
+    NSImage *activeImage;
+    NSImage *inactiveImage;
+    
+    NSImage *highlightImage;
+    NSImage *highlightActiveImage;
+    
+    NSTimeInterval lastMouseUp;
+    
+    SEL action;
+    id target;
 }
 
-@property(setter = setActive:) BOOL isActive;
+@property(nonatomic, setter = setActive:) BOOL isActive;
 @property(retain) NSStatusItem *statusItem;
 @property(retain) NSMenu *menu;
 @end

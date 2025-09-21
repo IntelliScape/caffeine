@@ -8,11 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+#import <IOKit/pwr_mgt/IOPMLib.h>
 #import "LCMenuIconView.h"
 #import "ISToggleSwitch.h"
-#import "Sentry/Sentry.h"
-#import "Countly.h"
-#import <Keys/CaffeineKeys.h>
 
 // Workaround for bug in 64-bit SDK
 #ifndef __POWER__
@@ -51,7 +49,8 @@ extern OSErr UpdateSystemActivity(UInt8 activity);
     IBOutlet NSButton *problemReportInfoPopoverButton;
     
     NSString *webBaseURL;
-    CaffeineKeys *config;
+    IOPMAssertionID previousActivityAssertion;
+    IOPMAssertionID previousIdleAssertion;
 }
 
 - (IBAction)showAbout:(id)sender;

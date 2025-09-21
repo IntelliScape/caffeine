@@ -18,7 +18,6 @@
 	[super init];
 	timer = [[NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(timer:) userInfo:nil repeats:YES] retain];
 	webBaseURL = @"https://www.intelliscapesolutions.com/apps/caffeine";
-    config = [[CaffeineKeys alloc] init];
     
 	// Workaround for a bug in Snow Leopard where Caffeine would prevent the computer from going to sleep when another account was active.
 	userSessionIsActive = YES;
@@ -28,12 +27,9 @@
 }
 
 - (void)awakeFromNib {
-	NSStatusItem *item = [[[NSStatusBar systemStatusBar] statusItemWithLength:30] retain];
-	menuView = [[LCMenuIconView alloc] initWithFrame:NSZeroRect];
-	[item setView:menuView];
-	[menuView setStatusItem:item];
-	[menuView setMenu:menu];
-	[menuView setAction:@selector(toggleActive:)];
+    menuView = [[LCMenuIconView alloc] initWithFrame:NSZeroRect];
+    [menuView setMenu:menu];
+    [menuView setAction:@selector(toggleActive:)];
 	
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * defaultValues = [NSMutableDictionary dictionary];
@@ -66,6 +62,8 @@
 	
 	NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:interval ? interval : -1], @"duration", nil];
 	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.intelliscapesolutions.caffeine.activation" object:nil userInfo:info];
+    
+    [self sendActivityAssertions];
 }
 
 - (void)activate {
@@ -79,6 +77,15 @@
 	[menuView setActive:isActive];
 	
 	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.intelliscapesolutions.caffeine.deactivation" object:nil userInfo:nil];
+    
+    if(previousActivityAssertion) {
+        IOPMAssertionRelease(previousActivityAssertion);
+        previousActivityAssertion = 0;
+    }
+    if(previousIdleAssertion) {
+        IOPMAssertionRelease(previousIdleAssertion);
+        previousIdleAssertion = 0;
+    }
 }
 
 - (IBAction)activateWithTimeout:(id)sender {
@@ -118,9 +125,35 @@
 
 # pragma mark - Core Functionality
 
+- (void)sendActivityAssertions {
+    CFStringRef assertionReason = CFSTR("Caffeine is Active");
+    IOPMAssertionID activityAssertionID;
+    IOReturn activityResult = IOPMAssertionDeclareUserActivity(assertionReason, kIOPMUserActiveLocal, &activityAssertionID);
+    if(activityResult == kIOReturnSuccess) {
+        if(previousActivityAssertion) {
+            IOPMAssertionRelease(previousActivityAssertion);
+        }
+        previousActivityAssertion = activityAssertionID;
+    }else{
+        NSLog(@"Failed to create activity assertion");
+    }
+    
+    IOPMAssertionID preventIdleAssertionID;
+    IOReturn idleResult = IOPMAssertionCreateWithDescription(kIOPMAssertionTypePreventUserIdleDisplaySleep, assertionReason, NULL, NULL, NULL, 0, NULL, &preventIdleAssertionID );
+    if(idleResult == kIOReturnSuccess) {
+        if(previousIdleAssertion) {
+            IOPMAssertionRelease(previousIdleAssertion);
+        }
+        previousIdleAssertion = preventIdleAssertionID;
+    }else{
+        NSLog(@"Failed to create idle assertion");
+    }
+}
+
 - (void)timer:(NSTimer*)timer {
-	if(isActive && ![self screensaverIsRunning] && userSessionIsActive)
-		UpdateSystemActivity(UsrActivity);
+    if(isActive && ![self screensaverIsRunning] && userSessionIsActive) {
+        [self sendActivityAssertions];
+    }
 }
 
 - (void)userSessionDidResignActive:(NSNotification *)note {
@@ -215,22 +248,7 @@
 # pragma mark - Application Lifecycle Events
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"SendProblemReports"]) {
-        // Sentry - Used for collecting crash reports & error statistics
-        NSError *error = nil;
-        SentryClient *client = [[SentryClient alloc] initWithDsn:config.sentryDSN didFailWithError:&error];
-        SentryClient.sharedClient = client;
-        [SentryClient.sharedClient startCrashHandlerWithError:&error];
-        if (nil != error) {
-            NSLog(@"%@", error);
-        }
-        
-        // Countly - Used for gathering anonymous metrics, such as OS version & device model
-        CountlyConfig* countly = CountlyConfig.new;
-        countly.appKey = config.countlyAppKey;
-        countly.host = config.countlyHost;
-        [Countly.sharedInstance startWithConfig:countly];
-    }
+
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification {
